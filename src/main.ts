@@ -1,3 +1,6 @@
+// import { Buffer } from 'buffer'
+// import EventEmitter from 'events'
+// import process from 'process'
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import { setupLayouts } from 'virtual:generated-layouts'

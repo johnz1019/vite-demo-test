@@ -16,12 +16,21 @@ import Unocss from 'unocss/vite'
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
+  // https://github.com/vitejs/vite/issues/1973
+  define: {
+    'process.env': {},
+  },
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      'process': 'process/browser',
+      'stream': 'stream-browserify',
+      'zlib': 'browserify-zlib',
+      'util': 'util',
     },
   },
   plugins: [
+    // polyfillNode(),
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),
